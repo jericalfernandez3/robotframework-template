@@ -12,3 +12,10 @@ Open Application
     Open Browser    ${App_Url}    chrome
     Maximize Browser Window
     Sleep    3
+
+Take Screenshot
+    [Documentation]    This keyword is used to take a screenshot of the current page.
+    ...    @author: jfernand    08Apr2024    - initial create
+    [Arguments]    ${Filename}
+
+    Capture Page Screenshot    ${SCREENSHOT_PATH}/${Filename}.png
