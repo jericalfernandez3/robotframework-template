@@ -6,4 +6,4 @@ These instruction will get you a copy of robotframework-template automation scri
 
 ### Prerequisites
 This project currently uses the following tools/libraries.
-- __[Python 3.9]__(https://www.python.org/downloads/release/python-3914/)
+- __[Python 3.9](https://www.python.org/downloads/release/python-3914/)__
