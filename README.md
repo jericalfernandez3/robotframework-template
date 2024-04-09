@@ -45,3 +45,29 @@ or
 ```
 C:\Users\<User>\AppData\Local\Programs\Python\Python39\Scripts
 ```
+### Setup testing environment in WSL
+You can visit __[How to install Linux on Windows with WSL](https://learn.microsoft.com/en-us/windows/wsl/install)__ for more detailed steps.
+#### Download and install Google Chrome
+Use __wget__ command to download google chrome
+```
+$ wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+```
+Get the current stable version and fix broken configs
+```
+$ sudo dpkg -i google-chrome-stable_current_amd64.deb || apt-get install --fix-broken -y
+```
+#### Download and install chromedriver
+```
+CHROMEDRIVER_URL=$(curl -s https://googlechromelabs.github.io/chrome-for-testing/last-known-good-versions-with-downloads.json | jq -r
+'.channels.Stable.downloads.chromedriver[] | select(.platform=="linux64").url') && \
+
+    wget "$CHROMEDRIVER_URL" -O chromedriver-linux64.zip && \
+
+    unzip chromedriver-linux64.zip && \
+
+    mv chromedriver-linux64/chromedriver /usr/local/bin/ && \
+
+    rm -r chromedriver-linux64.zip chromedriver-linux64 && \
+
+    chmod +x /usr/local/bin/chromedriver
+```
