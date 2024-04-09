@@ -58,7 +58,7 @@ $ sudo dpkg -i google-chrome-stable_current_amd64.deb || apt-get install --fix-b
 ```
 #### Download and install chromedriver
 ```
-CHROMEDRIVER_URL=$(curl -s https://googlechromelabs.github.io/chrome-for-testing/last-known-good-versions-with-downloads.json | jq -r
+$ CHROMEDRIVER_URL=$(curl -s https://googlechromelabs.github.io/chrome-for-testing/last-known-good-versions-with-downloads.json | jq -r
 '.channels.Stable.downloads.chromedriver[] | select(.platform=="linux64").url') && \
 
     wget "$CHROMEDRIVER_URL" -O chromedriver-linux64.zip && \
@@ -71,3 +71,15 @@ CHROMEDRIVER_URL=$(curl -s https://googlechromelabs.github.io/chrome-for-testing
 
     chmod +x /usr/local/bin/chromedriver
 ```
+### Testing via Local Machine (Windows or WSL IDE terminal)
+Once you are inside the repo, run these commands depending on the requirement.
+#### Run specific testcase
+```
+$ robot -d Results frontend_tests/tests/<Testcase.robot>
+```
+#### Run testcases in parallel inside __tests__ folder using pabot library
+```
+$ python -m pabot.pabot --processes 6 --timestampoutputs --outputdir Results frontend_tests/tests/*.robot
+```
+### Author
+- Jeric Al P. Fernandez - active Software Automation Tester
