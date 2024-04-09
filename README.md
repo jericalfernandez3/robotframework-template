@@ -71,6 +71,10 @@ $ CHROMEDRIVER_URL=$(curl -s https://googlechromelabs.github.io/chrome-for-testi
 
     chmod +x /usr/local/bin/chromedriver
 ```
+Install dependency libraries for Chrome
+```
+$ apt-get install -y libglib2.0-0 libnss3 libgconf-2-4 libfontconfig1 libxi6
+```
 ### Testing via Local Machine (Windows or WSL IDE terminal)
 Once you are inside the repo, run these commands depending on the requirement.
 #### Run specific testcase
