@@ -21,3 +21,27 @@ Clone the repository
 ```
 $ git clone https://github.com/jericalfernandez3/robotframework-template.git
 ```
+Create virtual environment
+```
+$ pythom -m venv .venv
+```
+Activate virtual environment
+```
+$ source .venv/bin/activate
+```
+or
+```
+$ .\.venv\bin\activate
+```
+Install necesarry libraries
+```
+$ pip install -r frontend_tests/requirements.txt
+```
+Make sure chromedriver is placed inside your python/Scripts folder (this setup is only applicable if you are trying to setup in your local __Windows__ machine)
+```
+$ C:\Program Files\Python39\Scripts
+```
+or
+```
+C:\Users\<User>\AppData\Local\Programs\Python\Python39\Scripts
+```
